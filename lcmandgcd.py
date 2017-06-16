@@ -15,7 +15,7 @@ def lcm(a, b):
     """Compute the lowest common multiple of a and b"""
     return a * b / gcd(a, b)
 
-listofn = [10,20,30,5]
+listofn = [10,5,20,30]
 result = listofn[0]
 for x in listofn:
     result = lcm(result,x)

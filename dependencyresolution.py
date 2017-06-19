@@ -39,6 +39,7 @@ def dep_resolve(node, resolved, unresolved):
     resolved.append(node)
     unresolved.remove(node)
 
+
 resolved = []
 unresolved = []
 dep_resolve(c, resolved, unresolved)

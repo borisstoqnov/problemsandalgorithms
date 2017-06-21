@@ -12,4 +12,3 @@ def palindromeb(n):
     return True
 
 print(palindromeb(n))
-

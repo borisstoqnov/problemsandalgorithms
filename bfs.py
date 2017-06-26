@@ -23,6 +23,23 @@ class MyQUEUE:
             result = True
         return result
 
+def BFS(graph,start,end,q):
+    temp_path = [start]
+    q.enqueue(temp_path)
+
+
+    while q.IsEmpty() == False:
+        tmp_path = q.dequeue()
+        last_node = tmp_path[len(tmp_path) - 1]
+        print(tmp_path)
+        if last_node == end:
+            print("VALID_PATH : ", tmp_path)
+        for link_node in graph[last_node]:
+            if link_node not in tmp_path:
+                new_path = []
+                new_path = tmp_path + [link_node]
+                q.enqueue(new_path)
+
 graph = {'A': ['B', 'C','E'],
              'B': ['A','C', 'D'],
              'C': ['D'],
@@ -34,6 +51,6 @@ graph = {'A': ['B', 'C','E'],
 
 path_queue = MyQUEUE()
 
-def BFS(graph,start,end,q):
-    temp_path = [start]
-    q.enqueue(temp_path)
+
+
+BFS(graph,"A","F",path_queue)
